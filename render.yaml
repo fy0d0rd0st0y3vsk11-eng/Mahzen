@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: mahzen-fedya
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /health
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: OWNER_ID
+        value: "896838638040666183"
+      - key: GUILD_ID
+        value: "1559340955973455926"
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: AI_MODEL
+        value: "openrouter/free"
+      - key: AI_SITE_NAME
+        value: "Mahzen Fedya"
+      - key: MAHZEN_DB
+        value: "mahzen.db"
